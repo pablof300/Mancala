@@ -1,4 +1,4 @@
-package me.pabloestrada.MancalaGame;
+package me.pabloestrada.MancalaGame.marbles;
 
 public enum MarbleColor {
 	RED(1), BLUE(2), GREEN(3), YELLOW(4);

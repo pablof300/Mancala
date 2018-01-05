@@ -1,4 +1,4 @@
-package me.pabloestrada.MancalaGame;
+package me.pabloestrada.MancalaGame.marbles;
 
 public class Position {
 

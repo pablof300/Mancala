@@ -1,4 +1,4 @@
-package me.pabloestrada.MancalaGame;
+package me.pabloestrada.MancalaGame.marbles;
 
 import javafx.animation.TranslateTransition;
 import javafx.scene.image.Image;
