@@ -100,6 +100,9 @@
                                  <font>
                                     <Font size="30.0" />
                                  </font>
+                                 <StackPane.margin>
+                                    <Insets bottom="150.0" />
+                                 </StackPane.margin>
                               </Label>
                            </children>
                            <HBox.margin>
@@ -264,6 +267,9 @@
                                  <font>
                                     <Font size="30.0" />
                                  </font>
+                                 <StackPane.margin>
+                                    <Insets top="200.0" />
+                                 </StackPane.margin>
                               </Label>
                            </children>
                         </StackPane>

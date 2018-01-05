@@ -23,10 +23,10 @@ public class Marble {
 	
 	public void moveTo(Position position) {
 		TranslateTransition tt = new TranslateTransition(Duration.millis(1000), imageView);
-	     tt.setToX(position.getX());
-	     tt.setToY(position.getY());
-	     tt.setCycleCount(1);
-	     tt.setAutoReverse(true);
-	     tt.play();
+	    tt.setToX(position.getX());
+	    tt.setToY(position.getY());
+	    tt.setCycleCount(1);
+	    tt.setAutoReverse(true);
+	    tt.play();
 	}
 }
