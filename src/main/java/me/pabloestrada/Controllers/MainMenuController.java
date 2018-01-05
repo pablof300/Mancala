@@ -7,12 +7,13 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 import javafx.fxml.FXML;
+import me.pabloestrada.Util.MenuLoader;
 
 public class MainMenuController {
 
 	@FXML
 	private void launchStart() {
-		System.out.println("Start");
+		new MenuLoader("gameplay_menu").load();
 	}
 	
 	@FXML

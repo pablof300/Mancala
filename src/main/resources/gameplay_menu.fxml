@@ -1,38 +1,276 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.pabloestrada.Controllers.GameplayController">
    <children>
       <ImageView fitHeight="1080.0" fitWidth="1920.0">
          <image>
             <Image url="@background.png" />
          </image>
       </ImageView>
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="200.0" fitWidth="200.0">
-                     <image>
-                        <Image url="@avatar_cpu.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="200.0" fitWidth="200.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0">
                      <image>
                         <Image url="@avatar_player.png" />
                      </image>
+                     <HBox.margin>
+                        <Insets right="100.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="100.0" fitWidth="100.0">
+                     <image>
+                        <Image url="@avatar_cpu.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
                   </ImageView>
                </children>
             </HBox>
-            <ImageView fitHeight="342.0" fitWidth="1000.0">
-               <image>
-                  <Image url="@mancalaboard.png" />
-               </image>
-            </ImageView>
+            <Label style="-fx-font-family: Silom;" text="Your turn!" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@ball1.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@ball2.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@ball3.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@ball4.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="342.0" fitWidth="1000.0">
+                     <image>
+                        <Image url="@board.png" />
+                     </image>
+                  </ImageView>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <StackPane maxHeight="265.0" maxWidth="118.0" prefHeight="265.0" prefWidth="118.0">
+                           <children>
+                              <ImageView fitHeight="265.0" fitWidth="118.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@bank.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="20.0" top="15.0" />
+                           </HBox.margin>
+                        </StackPane>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="slot1" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="slot11" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="slot12" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="slot13" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="slot14" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="slot15" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <StackPane maxHeight="265.0" maxWidth="118.0" prefHeight="265.0" prefWidth="118.0">
+                           <children>
+                              <ImageView fitHeight="265.0" fitWidth="118.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@bank.png" />
+                                 </image>
+                                 <StackPane.margin>
+                                    <Insets top="60.0" />
+                                 </StackPane.margin>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+               </children>
+            </StackPane>
          </children>
       </VBox>
    </children>
