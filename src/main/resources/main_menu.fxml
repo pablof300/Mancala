@@ -32,7 +32,7 @@
                   <Insets left="40.0" />
                </VBox.margin>
             </Label>
-            <ImageView fitHeight="72.0" fitWidth="231.0">
+            <ImageView fitHeight="72.0" fitWidth="231.0" onMouseClicked="#launchStart" pickOnBounds="true">
                <image>
                   <Image url="@button_start.png" />
                </image>
@@ -42,12 +42,12 @@
             </ImageView>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="77.0" fitWidth="116.0">
+                  <ImageView fitHeight="77.0" fitWidth="116.0" onMouseClicked="#launchGithub" pickOnBounds="true">
                      <image>
                         <Image url="@button_github.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="77.0" fitWidth="115.0">
+                  <ImageView fitHeight="77.0" fitWidth="115.0" onMouseClicked="#launchHelp" pickOnBounds="true">
                      <image>
                         <Image url="@button_help.png" />
                      </image>
