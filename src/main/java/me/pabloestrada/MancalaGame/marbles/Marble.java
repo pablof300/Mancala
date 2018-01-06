@@ -11,6 +11,8 @@ public class Marble {
 	
 	public Marble(MarbleColor color) {
 		imageView = new ImageView(getMarbleImage(color));
+		imageView.setFitHeight(30);
+		imageView.setFitWidth(30);
 	}
 	
 	private Image getMarbleImage(MarbleColor color) {
@@ -21,8 +23,8 @@ public class Marble {
 		return imageView;
 	}
 	
-	public void moveTo(Position position) {
-		TranslateTransition tt = new TranslateTransition(Duration.millis(1000), imageView);
+	public void moveTo(Position position, int time) {
+		TranslateTransition tt = new TranslateTransition(Duration.millis(time * 1000), imageView);
 	    tt.setToX(position.getX());
 	    tt.setToY(position.getY());
 	    tt.setCycleCount(1);

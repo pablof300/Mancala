@@ -30,4 +30,19 @@ public class Slot {
 		return position;
 	}
 	
+	public boolean isEmpty() {
+		return marbles.isEmpty();
+	}
+	
+	public Marble[] clearMarbels() {
+		Marble[] marblesArray = marbles.toArray(new Marble[marbles.size()]);
+		marbles.clear();
+		return marblesArray;
+	}
+	
+	public void addMarble(Marble marble, int time) {
+		marbles.add(marble);
+		marble.moveTo(getPosition().getSimilarPosition(), time);
+	}
+	
 }
