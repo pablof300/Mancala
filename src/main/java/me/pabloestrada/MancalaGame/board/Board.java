@@ -61,7 +61,7 @@ public class Board {
 		return temporarySlots;
 	}
 
-	public void populateMarbels(StackPane marbleHolder) {
+	public void populateMarbles(StackPane marbleHolder) {
 		MarbleColor[] colors = MarbleColor.values();
 		for (Slot slot : slots) {
 			for (int i = 0; i < 4; i++) {

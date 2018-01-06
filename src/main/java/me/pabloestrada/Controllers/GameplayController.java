@@ -123,11 +123,10 @@ public class GameplayController {
 
 		selectionMap = new HashMap<ImageView, Slot>();
 		board = new Board(imageViews, labels);
-		board.populateMarbels(marbleholder);
+		board.populateMarbles(marbleholder);
 
-		for (int i = 0; i < selectionImageViews.length; i++) {
+		for (int i = 0; i < selectionImageViews.length; i++) 
 			selectionMap.put(selectionImageViews[i], board.getSlot(i));
-		}
 
 	}
 
@@ -136,7 +135,6 @@ public class GameplayController {
 		Slot selectedSlot = selectionMap.get((ImageView) e.getSource());
 		if (board.canProcessTurn(selectedSlot.getId(), PlayerType.HUMAN))
 			board.processTurn(selectedSlot.getId(), PlayerType.HUMAN);
-
 	}
 
 	@FXML
