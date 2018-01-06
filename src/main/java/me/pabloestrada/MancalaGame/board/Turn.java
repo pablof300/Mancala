@@ -56,7 +56,6 @@ public class Turn {
 		if (!currentSlotObject.isMySide(type))
 			return;
 		getBank().addMarbles(getOppositeSlot(currentSlotObject).clearMarbels(), 1);
-
 	}
 
 	private Slot getOppositeSlot(Slot slot) {

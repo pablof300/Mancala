@@ -46,6 +46,7 @@ public class Slot {
 	public Marble[] clearMarbels() {
 		Marble[] marblesArray = marbles.toArray(new Marble[marbles.size()]);
 		marbles.clear();
+		updateMarbleLabel();
 		return marblesArray;
 	}
 
