@@ -1,5 +1,7 @@
 package me.pabloestrada.MancalaGame.type;
 
+import me.pabloestrada.MancalaGame.slots.PlayerType;
+
 public class GameInfo {
 
 	private GameType type;
@@ -33,6 +35,18 @@ public class GameInfo {
 
 	public GameInfo(GameType type) {
 		this.type = type;
+	}
+	
+	public GameType getGameType() {
+		return type;
+	}
+	
+	public String getName(PlayerType type) {
+		if(type == PlayerType.PLAYER_ONE)
+			return playerOneName;
+		if(type == PlayerType.PLAYER_TWO)
+			return playerTwoName;
+		return "CPU";
 	}
 	
 }

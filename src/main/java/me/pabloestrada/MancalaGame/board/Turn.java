@@ -16,12 +16,13 @@ public class Turn {
 		this.type = type;
 	}
 
-	public void run() {
+	public boolean run() {
 		Slot currentSlot = board[selectedSlot];
 		Marble[] marbels = currentSlot.clearMarbels();
 		currentSlot.updateMarbleLabel();
 		int currentMarble = 0;
 		int currentIndex = selectedSlot + 1;
+		boolean canGoAgain = false;
 		while (currentMarble < marbels.length) {
 			if (currentIndex == 14) {
 				currentIndex = 0;
@@ -33,11 +34,19 @@ public class Turn {
 			}
 			if (!currentSlotObject.isSlotABank() && isLastMarbleInTurn(currentMarble, marbels.length))
 				processCapture(currentIndex);
-
+			if (isLastMarbleInTurn(currentMarble, marbels.length)) {
+				if (currentSlotObject.isSlotABank() && isSlotMyBank(currentIndex)) {
+					canGoAgain = true;
+				}
+				if (!currentSlotObject.isSlotABank()) {
+					processCapture(currentIndex);
+				}
+			}
 			currentSlotObject.addMarble(marbels[currentMarble], 1);
 			currentMarble++;
 			currentIndex++;
 		}
+		return canGoAgain;
 	}
 
 	private boolean isSlotMyBank(int slot) {
@@ -66,10 +75,7 @@ public class Turn {
 		if (slot.isSlotABank())
 			return null;
 		int slotId = slot.getId();
-		int multiplier = 1;
-		if (slotId > 6)
-			multiplier = -1;
-		return board[((2 * (slotId - 6)) * multiplier) + slotId];
+		return board[((2 * (slotId - 6)) * -1) + slotId];
 	}
 
 	private Slot getBank() {

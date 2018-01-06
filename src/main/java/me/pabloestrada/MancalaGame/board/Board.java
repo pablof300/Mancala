@@ -3,19 +3,27 @@ package me.pabloestrada.MancalaGame.board;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import me.pabloestrada.Mancala.MancalaMain;
 import me.pabloestrada.MancalaGame.marbles.Marble;
 import me.pabloestrada.MancalaGame.marbles.MarbleColor;
 import me.pabloestrada.MancalaGame.marbles.Position;
 import me.pabloestrada.MancalaGame.slots.Bank;
 import me.pabloestrada.MancalaGame.slots.PlayerType;
 import me.pabloestrada.MancalaGame.slots.Slot;
+import me.pabloestrada.MancalaGame.type.GameType;
 
 public class Board {
 
 	private Slot[] slots;
+	private PlayerType currentPlayer;
 
-	public Board(ImageView[] slotImages, Label[] labels) {
+	private Label status;
+
+	public Board(ImageView[] slotImages, Label[] labels, Label status) {
 		this.slots = getSlots(slotImages, labels);
+		this.currentPlayer = PlayerType.PLAYER_ONE;
+		this.status = status;
+		updatePlayerTurnStatus(false);
 	}
 
 	public boolean canProcessTurn(int selectedSlot, PlayerType type) {
@@ -36,9 +44,34 @@ public class Board {
 		return true;
 	}
 
-	public void processTurn(int selectedSlot, PlayerType type) {
-		Turn currentTurn = new Turn(slots, selectedSlot, type);
-		currentTurn.run();
+	public void processTurn(int selectedSlot) {
+		Turn currentTurn = new Turn(slots, selectedSlot, currentPlayer);
+		boolean canGoAgain = currentTurn.run();
+
+		PlayerType oldPlayer = currentPlayer;
+		currentPlayer = getOppositeType(oldPlayer);
+		if (MancalaMain.getGameInfo().getGameType() == GameType.SINGLEPLAYER && oldPlayer == PlayerType.PLAYER_ONE)
+			currentPlayer = PlayerType.CPU;
+		
+		if(canGoAgain)
+			currentPlayer = oldPlayer;
+		
+		updatePlayerTurnStatus(canGoAgain);
+	}
+	
+	private void updatePlayerTurnStatus(boolean canGoAgain) {
+		String defaultText = " is now playing!";
+		if(canGoAgain)
+			defaultText = " gets an extra turn for landing in his store!";
+		status.setText(MancalaMain.getGameInfo().getName(currentPlayer) + defaultText);
+	}
+
+	private PlayerType getOppositeType(PlayerType type) {
+		if (type == PlayerType.PLAYER_ONE)
+			return PlayerType.PLAYER_TWO;
+		if (type == PlayerType.PLAYER_TWO)
+			return PlayerType.PLAYER_ONE;
+		return PlayerType.PLAYER_ONE;
 	}
 
 	public Slot getSlot(int selectedSlot) {
@@ -76,6 +109,10 @@ public class Board {
 				slot.addMarble(currentMarble, 3);
 			}
 		}
+	}
+	
+	public PlayerType getCurrentPlayer() {
+		return currentPlayer;
 	}
 
 }

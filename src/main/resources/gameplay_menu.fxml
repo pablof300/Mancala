@@ -62,7 +62,7 @@
                   <Insets top="-350.0" />
                </VBox.margin>
             </HBox>
-            <Label style="-fx-font-family: Silom;" text="Your turn!" textFill="WHITE">
+            <Label fx:id="status" style="-fx-font-family: Silom;" text="Your turn!" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>

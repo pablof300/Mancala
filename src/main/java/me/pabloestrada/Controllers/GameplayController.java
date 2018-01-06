@@ -19,6 +19,7 @@ import me.pabloestrada.Mancala.MancalaMain;
 import me.pabloestrada.MancalaGame.board.Board;
 import me.pabloestrada.MancalaGame.slots.PlayerType;
 import me.pabloestrada.MancalaGame.slots.Slot;
+import me.pabloestrada.MancalaGame.type.GameType;
 
 public class GameplayController {
 
@@ -108,6 +109,9 @@ public class GameplayController {
 	private Label label_12;
 	@FXML
 	private Label label_13;
+	
+	@FXML
+	private Label status;
 
 	@FXML
 	private StackPane marbleholder;
@@ -126,7 +130,7 @@ public class GameplayController {
 				selection_slot_9, selection_slot_10, selection_slot_11, selection_slot_12, selection_slot_13 };
 
 		selectionMap = new HashMap<ImageView, Slot>();
-		board = new Board(imageViews, labels);
+		board = new Board(imageViews, labels, status);
 		board.populateMarbles(marbleholder);
 
 		for (int i = 0; i < selectionImageViews.length; i++)
@@ -137,8 +141,8 @@ public class GameplayController {
 	@FXML
 	private void slotClicked(MouseEvent e) {
 		Slot selectedSlot = selectionMap.get((ImageView) e.getSource());
-		if (board.canProcessTurn(selectedSlot.getId(), PlayerType.PLAYER_ONE))
-			board.processTurn(selectedSlot.getId(), PlayerType.PLAYER_ONE);
+		if (board.canProcessTurn(selectedSlot.getId(), board.getCurrentPlayer()))
+			board.processTurn(selectedSlot.getId());
 	}
 
 	@FXML

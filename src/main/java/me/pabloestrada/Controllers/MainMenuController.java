@@ -7,12 +7,19 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 import javafx.fxml.FXML;
+import me.pabloestrada.Mancala.MancalaMain;
+import me.pabloestrada.MancalaGame.type.GameInfo;
+import me.pabloestrada.MancalaGame.type.GameType;
 import me.pabloestrada.Util.MenuLoader;
 
 public class MainMenuController {
 
 	@FXML
 	private void launchStart() {
+		// TO BE REMOVED
+		MancalaMain.setGameInfo(new GameInfo(GameType.MULTIPLAYER));
+		MancalaMain.getGameInfo().setPlayerOneName("Pablo");
+		MancalaMain.getGameInfo().setPlayerTwoName("John");
 		new MenuLoader("gameplay_menu").load();
 	}
 	
