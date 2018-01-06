@@ -36,7 +36,7 @@
                   </ImageView>
                </children>
                <VBox.margin>
-                  <Insets top="-250.0" />
+                  <Insets top="-350.0" />
                </VBox.margin>
             </HBox>
             <Label style="-fx-font-family: Silom;" text="Your turn!" textFill="WHITE">
@@ -58,12 +58,12 @@
                      <children>
                         <StackPane maxHeight="265.0" maxWidth="118.0" prefHeight="265.0" prefWidth="118.0">
                            <children>
-                              <ImageView fitHeight="265.0" fitWidth="118.0" opacity="0.35">
+                              <ImageView fx:id="slot_6" fitHeight="265.0" fitWidth="118.0" opacity="0.35">
                                  <image>
                                     <Image url="@bank.png" />
                                  </image>
                               </ImageView>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                              <Label fx:id="label_6" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
@@ -86,46 +86,22 @@
                         </StackPane>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <ImageView fx:id="slot1" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                              <ImageView fx:id="slot_5" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
                                  <image>
                                     <Image url="@slot.png" />
                                  </image>
                               </ImageView>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                              <Label fx:id="label_5" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </Label>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                              <Label fx:id="label_7" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
-                                 <image>
-                                    <Image url="@slot.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <ImageView fx:id="slot11" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
-                                 <image>
-                                    <Image url="@slot.png" />
-                                 </image>
-                              </ImageView>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                              <ImageView fx:id="slot_7" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
                                  <image>
                                     <Image url="@slot.png" />
                                  </image>
@@ -134,46 +110,22 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <ImageView fx:id="slot12" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                              <ImageView fx:id="slot_4" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
                                  <image>
                                     <Image url="@slot.png" />
                                  </image>
                               </ImageView>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                              <Label fx:id="label_4" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </Label>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                              <Label fx:id="label_8" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
-                                 <image>
-                                    <Image url="@slot.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <ImageView fx:id="slot13" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
-                                 <image>
-                                    <Image url="@slot.png" />
-                                 </image>
-                              </ImageView>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                              <ImageView fx:id="slot_8" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
                                  <image>
                                     <Image url="@slot.png" />
                                  </image>
@@ -182,22 +134,22 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <ImageView fx:id="slot14" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                              <ImageView fx:id="slot_3" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
                                  <image>
                                     <Image url="@slot.png" />
                                  </image>
                               </ImageView>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                              <Label fx:id="label_3" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </Label>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                              <Label fx:id="label_9" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                              <ImageView fx:id="slot_9" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
                                  <image>
                                     <Image url="@slot.png" />
                                  </image>
@@ -206,22 +158,70 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <ImageView fx:id="slot15" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                              <ImageView fx:id="slot_2" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
                                  <image>
                                     <Image url="@slot.png" />
                                  </image>
                               </ImageView>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                              <Label fx:id="label_2" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </Label>
-                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                              <Label fx:id="label_10" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                              <ImageView fx:id="slot_10" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="slot_1" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="label_1" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label_11" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="slot_11" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="slot_0" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="label_0" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label_12" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="slot_12" fitHeight="110.0" fitWidth="120.0" opacity="0.35">
                                  <image>
                                     <Image url="@slot.png" />
                                  </image>
@@ -230,7 +230,216 @@
                         </VBox>
                         <StackPane maxHeight="265.0" maxWidth="118.0" prefHeight="265.0" prefWidth="118.0">
                            <children>
-                              <ImageView fitHeight="265.0" fitWidth="118.0" opacity="0.35">
+                              <ImageView fx:id="slot_13" fitHeight="265.0" fitWidth="118.0" opacity="0.35">
+                                 <image>
+                                    <Image url="@bank.png" />
+                                 </image>
+                                 <StackPane.margin>
+                                    <Insets top="60.0" />
+                                 </StackPane.margin>
+                              </ImageView>
+                              <Label fx:id="label_13" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                                 <StackPane.margin>
+                                    <Insets top="200.0" />
+                                 </StackPane.margin>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="PLAYER" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <StackPane.margin>
+                                    <Insets bottom="180.0" />
+                                 </StackPane.margin>
+                              </Label>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </StackPane>
+            <StackPane fx:id="marbleholder" prefHeight="100.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="-450.0" />
+               </VBox.margin>
+            </StackPane>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" opacity="0.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="342.0" fitWidth="1000.0">
+                     <image>
+                        <Image url="@board.png" />
+                     </image>
+                  </ImageView>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <StackPane maxHeight="265.0" maxWidth="118.0" prefHeight="265.0" prefWidth="118.0">
+                           <children>
+                              <ImageView fx:id="selection_slot_6" fitHeight="265.0" fitWidth="118.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@bank.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="20.0" top="15.0" />
+                           </HBox.margin>
+                        </StackPane>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="selection_slot_5" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="selection_slot_7" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="selection_slot_4" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="selection_slot_8" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="selection_slot_3" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="selection_slot_9" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="selection_slot_2" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="selection_slot_10" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="selection_slot_1" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="selection_slot_11" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="selection_slot_0" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="label_01" style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-font-family: Silom;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="selection_slot_12" fitHeight="110.0" fitWidth="120.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
+                                 <image>
+                                    <Image url="@slot.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <StackPane maxHeight="265.0" maxWidth="118.0" prefHeight="265.0" prefWidth="118.0">
+                           <children>
+                              <ImageView fx:id="selection_slot_13" fitHeight="265.0" fitWidth="118.0" onMouseClicked="#slotClicked" onMouseEntered="#slotEntered" onMouseExited="#slotExited" opacity="0.35">
                                  <image>
                                     <Image url="@bank.png" />
                                  </image>
@@ -263,12 +472,10 @@
                   <Insets top="50.0" />
                </VBox.margin>
             </StackPane>
-            <StackPane fx:id="marbleholder" prefHeight="150.0" prefWidth="200.0">
-               <VBox.margin>
-                  <Insets top="-450.0" />
-               </VBox.margin>
-            </StackPane>
          </children>
+         <StackPane.margin>
+            <Insets top="140.0" />
+         </StackPane.margin>
       </VBox>
    </children>
 </StackPane>

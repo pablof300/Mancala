@@ -2,6 +2,8 @@ package me.pabloestrada.MancalaGame.slots;
 
 import java.util.ArrayList;
 
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import me.pabloestrada.MancalaGame.marbles.Marble;
 import me.pabloestrada.MancalaGame.marbles.Position;
 
@@ -12,8 +14,15 @@ public class Slot {
 	
 	private boolean isBank;
 	
-	public Slot(Position position, boolean isBank) {
+	private ImageView imageView;
+	private Label label;
+	private int id;
+	
+	public Slot(Position position, boolean isBank,ImageView imageView, Label label, int id) {
 		this.position = position;
+		this.id = id;
+		this.imageView = imageView;
+		this.label = label;
 		this.isBank = isBank;
 		marbles = new ArrayList<Marble>();
 	}
@@ -43,6 +52,18 @@ public class Slot {
 	public void addMarble(Marble marble, int time) {
 		marbles.add(marble);
 		marble.moveTo(getPosition().getSimilarPosition(), time);
+	}
+	
+	public Label getLabel() {
+		return label;
+	}
+	
+	public ImageView getImageView() {
+		return imageView;
+	}
+	
+	public int getId() {
+		return id;
 	}
 	
 }
