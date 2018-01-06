@@ -1,6 +1,7 @@
 package me.pabloestrada.MancalaGame.slots;
 
 public enum PlayerType {
-	HUMAN,
+	PLAYER_ONE,
+	PLAYER_TWO,
 	CPU;
 }

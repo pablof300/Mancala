@@ -14,6 +14,29 @@
             <Image url="@background.png" />
          </image>
       </ImageView>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="300.0" prefHeight="43.0" prefWidth="300.0" style="-fx-font-family: Silom;" text="Player One" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="150.0" />
+               </HBox.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="300.0" prefWidth="300.0" style="-fx-font-family: Silom;" text="Player Two" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="150.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <StackPane.margin>
+            <Insets bottom="420.0" />
+         </StackPane.margin>
+      </HBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">

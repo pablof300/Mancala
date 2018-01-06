@@ -26,21 +26,25 @@ public class Turn {
 			if (currentIndex == 14) {
 				currentIndex = 0;
 			}
-			if (type == PlayerType.CPU && currentIndex == 13) {
+			Slot currentSlotObject = board[currentIndex];
+			if (currentSlotObject.isSlotABank() && !isSlotMyBank(currentIndex)) {
 				currentIndex++;
 				continue;
 			}
-			if (type == PlayerType.HUMAN && currentIndex == 6) {
-				currentIndex++;
-				continue;
-			}
-			if (isLastMarbleInTurn(currentMarble, marbels.length))
+			if (!currentSlotObject.isSlotABank() && isLastMarbleInTurn(currentMarble, marbels.length))
 				processCapture(currentIndex);
 
-			board[currentIndex].addMarble(marbels[currentMarble], 1);
+			currentSlotObject.addMarble(marbels[currentMarble], 1);
 			currentMarble++;
 			currentIndex++;
 		}
+	}
+
+	private boolean isSlotMyBank(int slot) {
+		int myBankId = getBank().getId();
+		if (slot == myBankId)
+			return true;
+		return false;
 	}
 
 	private boolean isLastMarbleInTurn(int currentMarble, int totalMarbles) {
@@ -69,9 +73,13 @@ public class Turn {
 	}
 
 	private Slot getBank() {
-		if (type == PlayerType.HUMAN)
+		if (type == PlayerType.PLAYER_ONE)
 			return board[13];
-		return board[6];
+		if (type == PlayerType.PLAYER_TWO)
+			return board[6];
+		if (type == PlayerType.CPU)
+			return board[6];
+		return null;
 	}
 
 }

@@ -137,8 +137,8 @@ public class GameplayController {
 	@FXML
 	private void slotClicked(MouseEvent e) {
 		Slot selectedSlot = selectionMap.get((ImageView) e.getSource());
-		if (board.canProcessTurn(selectedSlot.getId(), PlayerType.HUMAN))
-			board.processTurn(selectedSlot.getId(), PlayerType.HUMAN);
+		if (board.canProcessTurn(selectedSlot.getId(), PlayerType.PLAYER_ONE))
+			board.processTurn(selectedSlot.getId(), PlayerType.PLAYER_ONE);
 	}
 
 	@FXML

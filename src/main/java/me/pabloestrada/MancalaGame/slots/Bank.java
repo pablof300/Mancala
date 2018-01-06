@@ -14,7 +14,7 @@ public class Bank extends Slot {
 	}
 	
 	public boolean isPlayer() {
-		if(type == PlayerType.HUMAN)
+		if(type == PlayerType.PLAYER_ONE || type == PlayerType.PLAYER_TWO)
 			return true;
 		return false;
 	}

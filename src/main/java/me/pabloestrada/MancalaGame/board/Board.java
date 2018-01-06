@@ -24,7 +24,10 @@ public class Board {
 			return false;
 		if (currentSlot.isEmpty())
 			return false;
-		if (type == PlayerType.HUMAN && selectedSlot < 6) {
+		if (type == PlayerType.PLAYER_ONE && selectedSlot < 6) {
+			return false;
+		}
+		if (type == PlayerType.PLAYER_TWO && selectedSlot > 6) {
 			return false;
 		}
 		if (type == PlayerType.CPU && selectedSlot > 6) {
@@ -53,7 +56,7 @@ public class Board {
 				continue;
 			}
 			if (i == 13) {
-				temporarySlots[i] = new Bank(pos, true, PlayerType.HUMAN, slotImages[i], labels[i], i);
+				temporarySlots[i] = new Bank(pos, true, PlayerType.PLAYER_ONE, slotImages[i], labels[i], i);
 				continue;
 			}
 			temporarySlots[i] = new Slot(pos, false, slotImages[i], labels[i], i);
@@ -64,6 +67,8 @@ public class Board {
 	public void populateMarbles(StackPane marbleHolder) {
 		MarbleColor[] colors = MarbleColor.values();
 		for (Slot slot : slots) {
+			if (slot.isSlotABank())
+				continue;
 			for (int i = 0; i < 4; i++) {
 				int colorIndex = (int) (Math.random() * colors.length);
 				Marble currentMarble = new Marble(colors[colorIndex]);

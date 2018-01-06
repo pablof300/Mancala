@@ -55,15 +55,18 @@ public class Slot {
 		marble.moveTo(getPosition().getSimilarPosition(), time);
 		updateMarbleLabel();
 	}
+
 	public void addMarbles(Marble[] marbles, int time) {
-		for(Marble marble : marbles) 
-			addMarble(marble,time);
+		for (Marble marble : marbles)
+			addMarble(marble, time);
 	}
-	
+
 	public boolean isMySide(PlayerType type) {
 		if (isBank)
 			return false;
-		if (type == PlayerType.HUMAN && id < 6)
+		if (type == PlayerType.PLAYER_ONE && id < 6)
+			return false;
+		if (type == PlayerType.PLAYER_TWO && id > 6)
 			return false;
 		if (type == PlayerType.CPU && id > 6)
 			return false;
