@@ -52,16 +52,60 @@ public class Board {
 		currentPlayer = getOppositeType(oldPlayer);
 		if (MancalaMain.getGameInfo().getGameType() == GameType.SINGLEPLAYER && oldPlayer == PlayerType.PLAYER_ONE)
 			currentPlayer = PlayerType.CPU;
-		
-		if(canGoAgain)
+
+		if (canGoAgain)
 			currentPlayer = oldPlayer;
-		
-		updatePlayerTurnStatus(canGoAgain);
+		// if(currentPlayer == PlayerType.CPU)
+		// processBotTurn();
+
+		int[] playerOneSlots = { 7, 8, 9, 10, 11, 12 };
+		int[] playerTwoSlots = { 0, 1, 2, 3, 4, 5 };
+		if (isGameOver(playerOneSlots, playerTwoSlots)) {
+			processWinner(playerOneSlots, playerTwoSlots);
+		} else {
+			updatePlayerTurnStatus(canGoAgain);
+		}
 	}
-	
+
+	private void processWinner(int[] playerOneSlots, int[] playerTwoSlots) {
+		clearAllMarbles(PlayerType.PLAYER_ONE, playerOneSlots);
+		clearAllMarbles(PlayerType.PLAYER_TWO, playerTwoSlots);
+
+		PlayerType winner = PlayerType.PLAYER_ONE;
+		if (getBank(PlayerType.PLAYER_TWO).getMarbleCount() > getBank(PlayerType.PLAYER_ONE).getMarbleCount()) {
+			winner = PlayerType.PLAYER_TWO;
+			if (MancalaMain.getGameInfo().getGameType() == GameType.SINGLEPLAYER)
+				winner = PlayerType.CPU;
+		}
+
+		status.setText(MancalaMain.getGameInfo().getName(winner) + " has won!");
+	}
+
+	private void clearAllMarbles(PlayerType type, int[] slotSet) {
+		Slot bank = getBank(type);
+		for (int slot : slotSet)
+			bank.addMarbles(slots[slot].clearMarbels(), 1);
+	}
+
+	private boolean isGameOver(int[] playerOneSlots, int[] playerTwoSlots) {
+		if (isEmpty(playerOneSlots))
+			return true;
+		if (isEmpty(playerTwoSlots))
+			return true;
+		return false;
+	}
+
+	private boolean isEmpty(int[] slotSet) {
+		for (int slot : slotSet) {
+			if (!slots[slot].isEmpty())
+				return false;
+		}
+		return true;
+	}
+
 	private void updatePlayerTurnStatus(boolean canGoAgain) {
 		String defaultText = " is now playing!";
-		if(canGoAgain)
+		if (canGoAgain)
 			defaultText = " gets an extra turn for landing in his store!";
 		status.setText(MancalaMain.getGameInfo().getName(currentPlayer) + defaultText);
 	}
@@ -110,9 +154,15 @@ public class Board {
 			}
 		}
 	}
-	
+
 	public PlayerType getCurrentPlayer() {
 		return currentPlayer;
+	}
+
+	private Slot getBank(PlayerType type) {
+		if (type == PlayerType.PLAYER_ONE)
+			return slots[13];
+		return slots[6];
 	}
 
 }

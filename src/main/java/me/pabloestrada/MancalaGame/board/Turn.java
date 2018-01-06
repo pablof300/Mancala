@@ -81,11 +81,7 @@ public class Turn {
 	private Slot getBank() {
 		if (type == PlayerType.PLAYER_ONE)
 			return board[13];
-		if (type == PlayerType.PLAYER_TWO)
-			return board[6];
-		if (type == PlayerType.CPU)
-			return board[6];
-		return null;
+		return board[6];
 	}
 
 }
