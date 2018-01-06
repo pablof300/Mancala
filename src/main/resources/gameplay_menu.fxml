@@ -16,7 +16,7 @@
       </ImageView>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="300.0" prefHeight="43.0" prefWidth="300.0" style="-fx-font-family: Silom;" text="Player One" textFill="WHITE">
+            <Label fx:id="playerone" alignment="CENTER" contentDisplay="CENTER" maxWidth="300.0" prefHeight="43.0" prefWidth="300.0" style="-fx-font-family: Silom;" text="Player One" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
@@ -24,7 +24,7 @@
                   <Insets right="150.0" />
                </HBox.margin>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="300.0" prefWidth="300.0" style="-fx-font-family: Silom;" text="Player Two" textFill="WHITE">
+            <Label fx:id="playertwo" alignment="CENTER" contentDisplay="CENTER" maxWidth="300.0" prefWidth="300.0" style="-fx-font-family: Silom;" text="Player Two" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
@@ -94,7 +94,7 @@
                                     <Insets bottom="150.0" />
                                  </StackPane.margin>
                               </Label>
-                              <Label style="-fx-font-family: Silom;" text="CPU" textFill="WHITE">
+                              <Label fx:id="playertwostore" alignment="CENTER" contentDisplay="CENTER" maxWidth="200.0" prefWidth="200.0" style="-fx-font-family: Silom;" text="Player Two" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -269,7 +269,7 @@
                                     <Insets top="200.0" />
                                  </StackPane.margin>
                               </Label>
-                              <Label style="-fx-font-family: Silom;" text="PLAYER" textFill="WHITE">
+                              <Label fx:id="playeronestore" alignment="CENTER" contentDisplay="CENTER" maxWidth="200.0" prefWidth="200.0" style="-fx-font-family: Silom;" text="Player One" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -478,7 +478,7 @@
                                     <Insets top="200.0" />
                                  </StackPane.margin>
                               </Label>
-                              <Label style="-fx-font-family: Silom;" text="PLAYER" textFill="WHITE">
+                              <Label style="-fx-font-family: Silom;" text="Player" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>

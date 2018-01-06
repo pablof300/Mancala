@@ -19,6 +19,7 @@ import me.pabloestrada.Mancala.MancalaMain;
 import me.pabloestrada.MancalaGame.board.Board;
 import me.pabloestrada.MancalaGame.slots.PlayerType;
 import me.pabloestrada.MancalaGame.slots.Slot;
+import me.pabloestrada.MancalaGame.type.GameInfo;
 import me.pabloestrada.MancalaGame.type.GameType;
 
 public class GameplayController {
@@ -112,6 +113,15 @@ public class GameplayController {
 	
 	@FXML
 	private Label status;
+	
+	@FXML
+	private Label playerone;
+	@FXML
+	private Label playertwo;
+	@FXML
+	private Label playeronestore;
+	@FXML
+	private Label playertwostore;
 
 	@FXML
 	private StackPane marbleholder;
@@ -135,6 +145,13 @@ public class GameplayController {
 
 		for (int i = 0; i < selectionImageViews.length; i++)
 			selectionMap.put(selectionImageViews[i], board.getSlot(i));
+		
+		GameInfo gameInfo = MancalaMain.getGameInfo();
+		playerone.setText(gameInfo.getPlayerOneName());
+		playertwo.setText(gameInfo.getPlayerTwoName());
+		playeronestore.setText(gameInfo.getPlayerOneName());
+		playertwostore.setText(gameInfo.getPlayerTwoName());
+		
 		centerStage(MancalaMain.getMainStage(), 1000, 600);
 	}
 
