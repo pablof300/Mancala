@@ -48,11 +48,11 @@ public class Board {
 		Slot[] temporarySlots = new Slot[14];
 		for (int i = 0; i < temporarySlots.length; i++) {
 			Position pos = new Position(xPos[i], yPos[i]);
-			if (i == 7) {
+			if (i == 6) {
 				temporarySlots[i] = new Bank(pos, true, PlayerType.CPU, slotImages[i], labels[i], i);
 				continue;
 			}
-			if (i == 14) {
+			if (i == 13) {
 				temporarySlots[i] = new Bank(pos, true, PlayerType.HUMAN, slotImages[i], labels[i], i);
 				continue;
 			}

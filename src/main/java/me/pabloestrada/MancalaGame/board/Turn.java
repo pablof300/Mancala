@@ -22,8 +22,8 @@ public class Turn {
 		int currentMarbel = 0;
 		int currentIndex = selectedSlot + 1;
 		while (currentMarbel < marbels.length) {
-			if (currentIndex == 15) {
-				currentIndex = 1;
+			if (currentIndex == 14) {
+				currentIndex = 0;
 			}
 			if (type == PlayerType.CPU && currentIndex == 13) {
 				currentIndex++;

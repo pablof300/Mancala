@@ -142,19 +142,18 @@ public class GameplayController {
 	@FXML
 	private void slotEntered(MouseEvent e) {
 		Slot selectedSlot = selectionMap.get((ImageView) e.getSource());
-
-		FadeTransition ft = new FadeTransition(Duration.millis(500), selectedSlot.getImageView());
-		ft.setToValue(0.5);
-		ft.setCycleCount(1);
-		ft.play();
+		fadeNode( selectedSlot.getImageView(),0.5f);
 	}
 
 	@FXML
 	private void slotExited(MouseEvent e) {
 		Slot selectedSlot = selectionMap.get((ImageView) e.getSource());
-
-		FadeTransition ft = new FadeTransition(Duration.millis(500), selectedSlot.getImageView());
-		ft.setToValue(0.3);
+		fadeNode( selectedSlot.getImageView(),0.3f);
+	}
+	
+	private void fadeNode(ImageView node, float scale) {
+		FadeTransition ft = new FadeTransition(Duration.millis(500), node);
+		ft.setToValue(scale);
 		ft.setCycleCount(1);
 		ft.play();
 	}
