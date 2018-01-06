@@ -19,9 +19,10 @@ public class Turn {
 	public void run() {
 		Slot currentSlot = board[selectedSlot];
 		Marble[] marbels = currentSlot.clearMarbels();
-		int currentMarbel = 0;
+		currentSlot.updateMarbleLabel();
+		int currentMarble = 0;
 		int currentIndex = selectedSlot + 1;
-		while (currentMarbel < marbels.length) {
+		while (currentMarble < marbels.length) {
 			if (currentIndex == 14) {
 				currentIndex = 0;
 			}
@@ -33,10 +34,45 @@ public class Turn {
 				currentIndex++;
 				continue;
 			}
-			board[currentIndex].addMarble(marbels[currentMarbel], 1);
-			currentMarbel++;
+			if (isLastMarbleInTurn(currentMarble, marbels.length))
+				processCapture(currentIndex);
+
+			board[currentIndex].addMarble(marbels[currentMarble], 1);
+			currentMarble++;
 			currentIndex++;
 		}
+	}
+
+	private boolean isLastMarbleInTurn(int currentMarble, int totalMarbles) {
+		if (currentMarble == totalMarbles - 1)
+			return true;
+		return false;
+	}
+
+	private void processCapture(int currentSlot) {
+		Slot currentSlotObject = board[currentSlot];
+		if (!currentSlotObject.isEmpty())
+			return;
+		if (!currentSlotObject.isMySide(type))
+			return;
+		getBank().addMarbles(getOppositeSlot(currentSlotObject).clearMarbels(), 1);
+
+	}
+
+	private Slot getOppositeSlot(Slot slot) {
+		if (slot.isSlotABank())
+			return null;
+		int slotId = slot.getId();
+		int multiplier = 1;
+		if (slotId > 6)
+			multiplier = -1;
+		return board[((2 * (slotId - 6)) * multiplier) + slotId];
+	}
+
+	private Slot getBank() {
+		if (type == PlayerType.HUMAN)
+			return board[13];
+		return board[6];
 	}
 
 }

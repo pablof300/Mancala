@@ -7,11 +7,15 @@ import java.util.TimerTask;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import me.pabloestrada.Mancala.MancalaMain;
 import me.pabloestrada.MancalaGame.board.Board;
 import me.pabloestrada.MancalaGame.slots.PlayerType;
 import me.pabloestrada.MancalaGame.slots.Slot;
@@ -125,9 +129,9 @@ public class GameplayController {
 		board = new Board(imageViews, labels);
 		board.populateMarbles(marbleholder);
 
-		for (int i = 0; i < selectionImageViews.length; i++) 
+		for (int i = 0; i < selectionImageViews.length; i++)
 			selectionMap.put(selectionImageViews[i], board.getSlot(i));
-
+		centerStage(MancalaMain.getMainStage(), 1000, 600);
 	}
 
 	@FXML
@@ -140,20 +144,26 @@ public class GameplayController {
 	@FXML
 	private void slotEntered(MouseEvent e) {
 		Slot selectedSlot = selectionMap.get((ImageView) e.getSource());
-		fadeNode( selectedSlot.getImageView(),0.5f);
+		fadeNode(selectedSlot.getImageView(), 0.5f);
 	}
 
 	@FXML
 	private void slotExited(MouseEvent e) {
 		Slot selectedSlot = selectionMap.get((ImageView) e.getSource());
-		fadeNode( selectedSlot.getImageView(),0.3f);
+		fadeNode(selectedSlot.getImageView(), 0.3f);
 	}
-	
+
 	private void fadeNode(ImageView node, float scale) {
 		FadeTransition ft = new FadeTransition(Duration.millis(500), node);
 		ft.setToValue(scale);
 		ft.setCycleCount(1);
 		ft.play();
+	}
+
+	private void centerStage(Stage stage, double width, double height) {
+		Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+		stage.setX((screenBounds.getWidth() - width) / 2);
+		stage.setY((screenBounds.getHeight() - height) / 2);
 	}
 
 }
