@@ -1,6 +1,10 @@
 package me.pabloestrada.MancalaGame.board;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import javafx.animation.FadeTransition;
+import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
@@ -23,6 +27,9 @@ public class Board {
 
 	private Label status;
 
+	private Timer timer;
+	private boolean isGameOver;
+
 	public Board(ImageView[] slotImages, Label[] labels, Label status, ImageView playeroneavatar,
 			ImageView playertwoavatar) {
 		this.slots = getSlots(slotImages, labels);
@@ -30,6 +37,8 @@ public class Board {
 		this.status = status;
 		this.playeroneavatar = playeroneavatar;
 		this.playertwoavatar = playertwoavatar;
+		this.timer = new Timer();
+		this.isGameOver = false;
 		updatePlayerTurnStatus(false);
 		updatePlayerAvatars();
 	}
@@ -63,17 +72,44 @@ public class Board {
 
 		if (canGoAgain)
 			currentPlayer = oldPlayer;
-		// if(currentPlayer == PlayerType.CPU)
-		// processBotTurn();
+		if (currentPlayer == PlayerType.CPU)
+			processBotTurn();
 
 		int[] playerOneSlots = { 7, 8, 9, 10, 11, 12 };
 		int[] playerTwoSlots = { 0, 1, 2, 3, 4, 5 };
 		if (isGameOver(playerOneSlots, playerTwoSlots)) {
+			isGameOver = true;
 			processWinner(playerOneSlots, playerTwoSlots);
 		} else {
 			updatePlayerAvatars();
 			updatePlayerTurnStatus(canGoAgain);
 		}
+	}
+
+	private void processBotTurn() {
+		timer.schedule(new TimerTask() {
+
+			@Override
+			public void run() {
+				Platform.runLater(new Runnable() {
+
+					@Override
+					public void run() {
+						if (isGameOver)
+							return;
+						int randomSlot = (int) (Math.random() * 6);;
+						int counter = 0;
+						while (slots[randomSlot].isEmpty()) {
+							randomSlot = (int) (Math.random() * 6);
+							if (counter >= 6)
+								break;
+							counter++;
+						}
+						processTurn(randomSlot);
+					}
+				});
+			}
+		}, 2000);
 	}
 
 	private void processWinner(int[] playerOneSlots, int[] playerTwoSlots) {

@@ -170,6 +170,8 @@ public class GameplayController {
 	private void slotClicked(MouseEvent e) {
 		if (!hasStarted)
 			return;
+		if(board.getCurrentPlayer() == PlayerType.CPU)
+			return;
 		Slot selectedSlot = selectionMap.get((ImageView) e.getSource());
 		if (board.canProcessTurn(selectedSlot.getId(), board.getCurrentPlayer()))
 			board.processTurn(selectedSlot.getId());
