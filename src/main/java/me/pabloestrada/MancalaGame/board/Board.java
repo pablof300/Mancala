@@ -1,8 +1,10 @@
 package me.pabloestrada.MancalaGame.board;
 
+import javafx.animation.FadeTransition;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.util.Duration;
 import me.pabloestrada.Mancala.MancalaMain;
 import me.pabloestrada.MancalaGame.marbles.Marble;
 import me.pabloestrada.MancalaGame.marbles.MarbleColor;
@@ -10,7 +12,6 @@ import me.pabloestrada.MancalaGame.marbles.Position;
 import me.pabloestrada.MancalaGame.slots.Bank;
 import me.pabloestrada.MancalaGame.slots.PlayerType;
 import me.pabloestrada.MancalaGame.slots.Slot;
-import me.pabloestrada.MancalaGame.type.GameType;
 
 public class Board {
 
@@ -19,16 +20,18 @@ public class Board {
 
 	private ImageView playeroneavatar;
 	private ImageView playertwoavatar;
-	
+
 	private Label status;
 
-	public Board(ImageView[] slotImages, Label[] labels, Label status, ImageView playeroneavatar, ImageView playertwoavatar) {
+	public Board(ImageView[] slotImages, Label[] labels, Label status, ImageView playeroneavatar,
+			ImageView playertwoavatar) {
 		this.slots = getSlots(slotImages, labels);
 		this.currentPlayer = PlayerType.PLAYER_ONE;
 		this.status = status;
 		this.playeroneavatar = playeroneavatar;
 		this.playertwoavatar = playertwoavatar;
 		updatePlayerTurnStatus(false);
+		updatePlayerAvatars();
 	}
 
 	public boolean canProcessTurn(int selectedSlot, PlayerType type) {
@@ -68,6 +71,7 @@ public class Board {
 		if (isGameOver(playerOneSlots, playerTwoSlots)) {
 			processWinner(playerOneSlots, playerTwoSlots);
 		} else {
+			updatePlayerAvatars();
 			updatePlayerTurnStatus(canGoAgain);
 		}
 	}
@@ -90,6 +94,23 @@ public class Board {
 		Slot bank = getBank(type);
 		for (int slot : slotSet)
 			bank.addMarbles(slots[slot].clearMarbels(), 1);
+	}
+
+	private void updatePlayerAvatars() {
+		if (currentPlayer == PlayerType.PLAYER_ONE) {
+			fadeNode(playeroneavatar, 1f);
+			fadeNode(playertwoavatar, 0.3f);
+		} else {
+			fadeNode(playeroneavatar, 0.3f);
+			fadeNode(playertwoavatar, 1f);
+		}
+	}
+
+	private void fadeNode(ImageView node, float scale) {
+		FadeTransition ft = new FadeTransition(Duration.millis(500), node);
+		ft.setToValue(scale);
+		ft.setCycleCount(1);
+		ft.play();
 	}
 
 	private boolean isGameOver(int[] playerOneSlots, int[] playerTwoSlots) {
