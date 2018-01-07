@@ -40,14 +40,14 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField maxWidth="150.0" prefWidth="150.0" promptText="Type your name" />
-            <Label style="-fx-font-family: Silom;" text="Player two" textFill="WHITE">
+            <TextField fx:id="playerone" maxWidth="150.0" prefWidth="150.0" promptText="Type your name" />
+            <Label fx:id="playertwolabel" style="-fx-font-family: Silom;" text="Player two" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField maxWidth="150.0" prefWidth="150.0" promptText="Type your name" />
-            <ImageView fitHeight="62.0" fitWidth="200.0">
+            <TextField fx:id="playertwo" maxWidth="150.0" prefWidth="150.0" promptText="Type your name" />
+            <ImageView fitHeight="62.0" fitWidth="200.0" onMouseClicked="#start" pickOnBounds="true">
                <image>
                   <Image url="@button_start.png" />
                </image>
@@ -55,9 +55,9 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </ImageView>
-            <Label alignment="CENTER" prefHeight="18.0" prefWidth="365.0" style="-fx-font-family: Silom;" text="Player one" textFill="WHITE">
+            <Label fx:id="status" alignment="CENTER" prefHeight="18.0" prefWidth="365.0" style="-fx-font-family: Silom;" textFill="WHITE">
                <font>
-                  <Font size="15.0" />
+                  <Font size="10.0" />
                </font>
                <VBox.margin>
                   <Insets top="10.0" />

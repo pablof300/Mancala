@@ -50,7 +50,7 @@ public class Board {
 
 		PlayerType oldPlayer = currentPlayer;
 		currentPlayer = getOppositeType(oldPlayer);
-		if (MancalaMain.getGameInfo().getGameType() == GameType.SINGLEPLAYER && oldPlayer == PlayerType.PLAYER_ONE)
+		if (MancalaMain.getGameInfo().isSingleplayer() && oldPlayer == PlayerType.PLAYER_ONE)
 			currentPlayer = PlayerType.CPU;
 
 		if (canGoAgain)
@@ -74,7 +74,7 @@ public class Board {
 		PlayerType winner = PlayerType.PLAYER_ONE;
 		if (getBank(PlayerType.PLAYER_TWO).getMarbleCount() > getBank(PlayerType.PLAYER_ONE).getMarbleCount()) {
 			winner = PlayerType.PLAYER_TWO;
-			if (MancalaMain.getGameInfo().getGameType() == GameType.SINGLEPLAYER)
+			if (MancalaMain.getGameInfo().isSingleplayer())
 				winner = PlayerType.CPU;
 		}
 

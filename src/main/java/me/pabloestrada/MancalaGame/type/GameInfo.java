@@ -49,4 +49,15 @@ public class GameInfo {
 		return "CPU";
 	}
 	
+	public boolean isMultiplayer() {
+		if(type == GameType.MULTIPLAYER)
+			return true;
+		return false;
+	}
+	public boolean isSingleplayer() {
+		if(type == GameType.SINGLEPLAYER)
+			return true;
+		return false;
+	}
+	
 }

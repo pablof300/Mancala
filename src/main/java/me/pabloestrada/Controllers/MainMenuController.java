@@ -16,11 +16,7 @@ public class MainMenuController {
 
 	@FXML
 	private void launchStart() {
-		// TO BE REMOVED
-		MancalaMain.setGameInfo(new GameInfo(GameType.MULTIPLAYER));
-		MancalaMain.getGameInfo().setPlayerOneName("Pablo");
-		MancalaMain.getGameInfo().setPlayerTwoName("Tina");
-		new MenuLoader("gameplay_menu").load();
+		new MenuLoader("selectormenu").load();
 	}
 	
 	@FXML
