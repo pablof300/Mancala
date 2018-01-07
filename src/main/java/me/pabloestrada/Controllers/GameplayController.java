@@ -21,6 +21,7 @@ import me.pabloestrada.MancalaGame.slots.PlayerType;
 import me.pabloestrada.MancalaGame.slots.Slot;
 import me.pabloestrada.MancalaGame.type.GameInfo;
 import me.pabloestrada.MancalaGame.type.GameType;
+import me.pabloestrada.MancalaHelp.Tutorial;
 
 public class GameplayController {
 
@@ -81,6 +82,11 @@ public class GameplayController {
 	private ImageView slot_12;
 	@FXML
 	private ImageView slot_13;
+	
+	@FXML
+	private ImageView playeroneavatar;
+	@FXML
+	private ImageView playertwoavatar;
 
 	@FXML
 	private Label label_0;
@@ -140,7 +146,7 @@ public class GameplayController {
 				selection_slot_9, selection_slot_10, selection_slot_11, selection_slot_12, selection_slot_13 };
 
 		selectionMap = new HashMap<ImageView, Slot>();
-		board = new Board(imageViews, labels, status);
+		board = new Board(imageViews, labels, status, playeroneavatar, playertwoavatar);
 		board.populateMarbles(marbleholder);
 
 		for (int i = 0; i < selectionImageViews.length; i++)
@@ -174,13 +180,18 @@ public class GameplayController {
 		fadeNode(selectedSlot.getImageView(), 0.3f);
 	}
 
+	@FXML
+	private void launchTutorial() {
+		new Tutorial().showTutorial();
+	}
+	
 	private void fadeNode(ImageView node, float scale) {
 		FadeTransition ft = new FadeTransition(Duration.millis(500), node);
 		ft.setToValue(scale);
 		ft.setCycleCount(1);
 		ft.play();
 	}
-
+	
 	private void centerStage(Stage stage, double width, double height) {
 		Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 		stage.setX((screenBounds.getWidth() - width) / 2);

@@ -6,10 +6,20 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import me.pabloestrada.Mancala.MancalaMain;
 import me.pabloestrada.MancalaGame.type.GameInfo;
 import me.pabloestrada.MancalaGame.type.GameType;
+import me.pabloestrada.MancalaHelp.Tutorial;
 import me.pabloestrada.Util.MenuLoader;
 
 public class MainMenuController {
@@ -26,7 +36,7 @@ public class MainMenuController {
 	
 	@FXML
 	private void launchHelp() {
-		System.out.println("Help");
+		new Tutorial().showTutorial();
 	}
 	
 	private boolean openWebpage(URI uri) {

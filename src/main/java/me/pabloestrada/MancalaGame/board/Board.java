@@ -17,12 +17,17 @@ public class Board {
 	private Slot[] slots;
 	private PlayerType currentPlayer;
 
+	private ImageView playeroneavatar;
+	private ImageView playertwoavatar;
+	
 	private Label status;
 
-	public Board(ImageView[] slotImages, Label[] labels, Label status) {
+	public Board(ImageView[] slotImages, Label[] labels, Label status, ImageView playeroneavatar, ImageView playertwoavatar) {
 		this.slots = getSlots(slotImages, labels);
 		this.currentPlayer = PlayerType.PLAYER_ONE;
 		this.status = status;
+		this.playeroneavatar = playeroneavatar;
+		this.playertwoavatar = playertwoavatar;
 		updatePlayerTurnStatus(false);
 	}
 

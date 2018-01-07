@@ -293,6 +293,14 @@
             </StackPane>
          </children>
       </VBox>
+      <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#launchTutorial" pickOnBounds="true">
+         <image>
+            <Image url="@button_help_2.png" />
+         </image>
+         <StackPane.margin>
+            <Insets left="950.0" top="-550.0" />
+         </StackPane.margin>
+      </ImageView>
       <VBox alignment="CENTER" opacity="0.0" prefHeight="200.0" prefWidth="100.0">
          <children>
             <StackPane prefHeight="150.0" prefWidth="200.0">
