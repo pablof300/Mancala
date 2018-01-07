@@ -65,5 +65,13 @@
             </Label>
          </children>
       </VBox>
+      <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#back" pickOnBounds="true">
+         <image>
+            <Image url="@backbutton.png" />
+         </image>
+         <StackPane.margin>
+            <Insets bottom="300.0" right="280.0" />
+         </StackPane.margin>
+      </ImageView>
    </children>
 </StackPane>

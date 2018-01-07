@@ -22,6 +22,7 @@ import me.pabloestrada.MancalaGame.slots.Slot;
 import me.pabloestrada.MancalaGame.type.GameInfo;
 import me.pabloestrada.MancalaGame.type.GameType;
 import me.pabloestrada.MancalaHelp.Tutorial;
+import me.pabloestrada.Util.MenuLoader;
 
 public class GameplayController {
 
@@ -82,7 +83,7 @@ public class GameplayController {
 	private ImageView slot_12;
 	@FXML
 	private ImageView slot_13;
-	
+
 	@FXML
 	private ImageView playeroneavatar;
 	@FXML
@@ -116,10 +117,10 @@ public class GameplayController {
 	private Label label_12;
 	@FXML
 	private Label label_13;
-	
+
 	@FXML
 	private Label status;
-	
+
 	@FXML
 	private Label playerone;
 	@FXML
@@ -135,8 +136,11 @@ public class GameplayController {
 	private Board board;
 	private HashMap<ImageView, Slot> selectionMap;
 
+	private boolean hasStarted;
+
 	@FXML
 	private void initialize() {
+		hasStarted = false;
 		ImageView[] imageViews = { slot_0, slot_1, slot_2, slot_3, slot_4, slot_5, slot_6, slot_7, slot_8, slot_9,
 				slot_10, slot_11, slot_12, slot_13 };
 		Label[] labels = { label_0, label_1, label_2, label_3, label_4, label_5, label_6, label_7, label_8, label_9,
@@ -151,18 +155,21 @@ public class GameplayController {
 
 		for (int i = 0; i < selectionImageViews.length; i++)
 			selectionMap.put(selectionImageViews[i], board.getSlot(i));
-		
+
 		GameInfo gameInfo = MancalaMain.getGameInfo();
 		playerone.setText(gameInfo.getPlayerOneName());
 		playertwo.setText(gameInfo.getPlayerTwoName());
 		playeronestore.setText(gameInfo.getPlayerOneName());
 		playertwostore.setText(gameInfo.getPlayerTwoName());
-		
+
 		centerStage(MancalaMain.getMainStage(), 1000, 600);
+		startGame();
 	}
 
 	@FXML
 	private void slotClicked(MouseEvent e) {
+		if (!hasStarted)
+			return;
 		Slot selectedSlot = selectionMap.get((ImageView) e.getSource());
 		if (board.canProcessTurn(selectedSlot.getId(), board.getCurrentPlayer()))
 			board.processTurn(selectedSlot.getId());
@@ -184,14 +191,30 @@ public class GameplayController {
 	private void launchTutorial() {
 		new Tutorial().showTutorial();
 	}
-	
+
+	@FXML
+	private void back() {
+		new MenuLoader("main_menu").load();
+	}
+
 	private void fadeNode(ImageView node, float scale) {
 		FadeTransition ft = new FadeTransition(Duration.millis(500), node);
 		ft.setToValue(scale);
 		ft.setCycleCount(1);
 		ft.play();
 	}
-	
+
+	private void startGame() {
+		Timer timer = new Timer();
+		timer.schedule(new TimerTask() {
+
+			@Override
+			public void run() {
+				hasStarted = true;
+			}
+		}, 2 * 1000);
+	}
+
 	private void centerStage(Stage stage, double width, double height) {
 		Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 		stage.setX((screenBounds.getWidth() - width) / 2);

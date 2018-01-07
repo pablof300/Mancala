@@ -18,6 +18,11 @@ public class SelectorController {
 		askForName(GameType.MULTIPLAYER);
 	}
 	
+	@FXML
+	private void back() {
+		new MenuLoader("main_menu").load();
+	}
+	
 	private void askForName(GameType gameType) {
 		MancalaMain.setGameInfo(new GameInfo(gameType));
 		new MenuLoader("namesmenu").load();

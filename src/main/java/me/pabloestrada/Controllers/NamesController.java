@@ -39,6 +39,11 @@ public class NamesController {
 		MancalaMain.getGameInfo().setPlayerTwoName(playerTwo);
 		new MenuLoader("gameplay_menu").load();
 	}
+	
+	@FXML
+	private void back() {
+		new MenuLoader("selectormenu").load();
+	}
 
 	private boolean isUsernameValid(String username) {
 		if (username.length() > 12)
