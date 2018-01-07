@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.pabloestrada.Controllers.MainMenuController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.pabloestrada.Controllers.SelectorController">
    <children>
       <ImageView fitHeight="365.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -34,29 +34,20 @@
          <children>
             <ImageView fitHeight="72.0" fitWidth="231.0" onMouseClicked="#launchStart" pickOnBounds="true">
                <image>
-                  <Image url="@button_start.png" />
+                  <Image url="@singleplayer.png" />
                </image>
                <VBox.margin>
                   <Insets left="50.0" top="50.0" />
                </VBox.margin>
             </ImageView>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <ImageView fitHeight="77.0" fitWidth="116.0" onMouseClicked="#launchGithub" pickOnBounds="true">
-                     <image>
-                        <Image url="@button_github.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="77.0" fitWidth="115.0" onMouseClicked="#launchHelp" pickOnBounds="true">
-                     <image>
-                        <Image url="@button_help.png" />
-                     </image>
-                  </ImageView>
-               </children>
+            <ImageView fitHeight="72.0" fitWidth="231.0" onMouseClicked="#launchStart" pickOnBounds="true">
+               <image>
+                  <Image url="@multiplayer.png" />
+               </image>
                <VBox.margin>
                   <Insets left="50.0" />
                </VBox.margin>
-            </HBox>
+            </ImageView>
          </children>
          <StackPane.margin>
             <Insets top="140.0" />
