@@ -42,27 +42,4 @@ public class Tutorial {
 		page.getDialogPane().setContent(contents);
 		return page;
 	}
-	/*		// Create the custom dialog.
-		Dialog dialog = new Dialog();
-		dialog.setTitle("" + i);
-		dialog.setHeaderText("Look, a Custom Login Dialog");
-
-		StackPane grid = new StackPane();
-		dialog.getDialogPane().getButtonTypes().add(new ButtonType("Got it!", ButtonData.CANCEL_CLOSE));
-		ImageView image = new ImageView(new Image(getClass().getResource("/" + "one" + ".png").toExternalForm()));
-		image.setFitWidth(800);
-		image.setFitHeight(496);
-		grid.getChildren().add(image);
-		dialog.getDialogPane().setContent(grid);
-		dialog.showAndWait();}
-		
-/*		final Button btOk = (Button) dialog.getDialogPane().lookupButton(ButtonType.CANCEL); 
-		btOk.addEventFilter(ActionEvent.ACTION, (event) -> { 
-			System.out.println("CAT");
-		}); */
-		
-
-		
-		
-
 }
