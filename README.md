@@ -24,3 +24,8 @@ Must have Java 8 JDK (JavaFX) and Maven
 All of the respective credit is stated in the arts_copyright [github](https://github.com/pablof300/Mancala/blob/master/src/main/resources/art_copyright)
 
 Avatars were created by Roundicons Freebies
+
+## TODO
+
+- Improve the CPU gameplay
+- Add multiplayer cross-computers
